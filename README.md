@@ -1,12 +1,12 @@
 # Plastic Mobile Technical Test
 
-Basic summary of tasks as per [Instructions PDF](https://github.com/htkoca/pm-technical-interview/blob/master/UI%20Dev%20test.pdf):
+Complete tasks as per [Instructions PDF](https://github.com/htkoca/pm-technical-interview/blob/master/UI%20Dev%20test.pdf):
+
+### Task 1 - Video Demo
 - Video Page - A full screen video page with rainbow text effect on click
+- [Visit Video Demo](https://htkoca.github.io/pm-technical-interview/video-demo/)
+
+### Task 2 - Api Demo
 - Craigslist "api" - A injectable JS function that returns craiglist toronto gig's search results in JSON format.
-
-### Task 1 - Video Page
-- [Visit Video Page](https://htkoca.github.io/pm-technical-interview/video-page.html)
-
-### Task 2 - Craigslist Api
-- [Visit Instructions Page](https://htkoca.github.io/pm-technical-interview/craigslist-api.html)
-- [See JS function](https://github.com/htkoca/pm-technical-interview/blob/master/docs/assets/craigslist-api.js)
+- [Visit Api Demo](https://htkoca.github.io/pm-technical-interview/api-demo/)
+- [See JS function itself](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/assets/api-function.js)
