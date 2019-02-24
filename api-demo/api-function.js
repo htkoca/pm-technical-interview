@@ -30,11 +30,8 @@ function craigslistSearch(searchQuery) {
       'date': $row.querySelector('.result-date') ? $row.querySelector('.result-date').getAttribute('datetime').trim() : '',
       'location': $row.querySelector('.result-hood') ? $row.querySelector('.result-hood').innerHTML.trim() : '',
     }
-    Object.keys(rslt).forEach(function(key){
-      let val = rslt[key];
-      if( !val ){
-        delete rslt[key]
-      }
+    Object.keys(rslt).forEach(key => {
+      if( !rslt[key] ) delete rslt[key];
     })
     return rslt;
   }
@@ -53,12 +50,12 @@ function craigslistSearch(searchQuery) {
       let parser = new DOMParser();
       let tempDOM = parser.parseFromString(text, 'text/html').documentElement;
       let $rows = tempDOM.getElementsByClassName('result-row');
-      let rslt = collectionToArray($rows).map(function ($row) { // loop through all results
+      let rslt = collectionToArray($rows).map($row => { // loop through all results
         return parseRow($row, window.imageConfig); // convert result array elements into objects.
       });
       console.log(rslt);
       return rslt;
-    }).catch(function (error) {
+    }).catch(error => {
       console.error('[error]', error);
     });
 
