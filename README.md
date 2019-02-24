@@ -17,5 +17,5 @@ Instructions to test function:
 - Navigate to https://toronto.craigslist.org/search/ggg?&is_paid=all
 - Open Dev Tools (Right click > inspect)
 - Open Console tab
-- Paste in contents of [api-functions.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js)
+- Paste in contents of [api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js)
 - Press enter
