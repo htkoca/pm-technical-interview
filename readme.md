@@ -5,11 +5,11 @@ Complete tasks as per [Instructions PDF](https://github.com/htkoca/pm-technical-
 
 ## Task 1 - Video Demo
 A full screen video page, overlay text with 20% margins. Rainbow text effect on click.
-- [Visit video demo](https://htkoca.github.io/pm-technical-interview/video-demo/)
+- [View video demo](https://htkoca.github.io/pm-technical-interview/video-demo/)
 
 ## Task 2 - API Demo
 A injectable JS function that returns Craigslist Toronto's `ggg` search results in JSON format.
-- [Visit api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js)
+- [View api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js)
 - Function based on `searchQuery` argument, returns promise that auto resolves to expected JSON output.
 
 #### Test Instructions: 
