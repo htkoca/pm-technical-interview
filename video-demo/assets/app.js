@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   // init vars
   var rainbowState = false;
   var rainbowTimer; // if required, rainbow can timeout after 10s, just uncomment timer code below
-  var $el = document.getElementsByClassName('trigger')[0];
+  var $el = document.querySelector('.trigger');
 
   // trigger on click
   $el.addEventListener('click', function(e){
