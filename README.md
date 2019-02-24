@@ -13,6 +13,6 @@ A injectable JS function that returns Craigslist Toronto's `ggg` search results 
 - Function based on `searchQuery` argument, returns promise that auto resolves to expected JSON output.
 
 #### Test Instructions: 
-- Navigate to https://toronto.craigslist.org/search/ggg?&is_paid=all
+- Navigate to [https://toronto.craigslist.org/search/ggg](https://toronto.craigslist.org/search/ggg)
 - Open Dev Tools' Console Tab (Right click > Inspect > Console Tab).
 - Paste in contents of [api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js), press Enter.
