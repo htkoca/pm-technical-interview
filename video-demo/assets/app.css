@@ -51,7 +51,7 @@ body {
   color: white;
   font-size: 16vmin;
   text-decoration: none;
-  transition: font-size 0.05s linear; /* smooth font sizing on resize */
+  transition: font-size 0.05s ease; /* smooth font sizing on resize */
 }
 @media only screen and (max-width: 700px) {
   .trigger {
@@ -66,20 +66,18 @@ body {
 
 /* text element animation */
 .rainbow {
-  animation: rainbow 10s infinite; 
+  animation: rainbow 8s linear infinite;
 }
-@keyframes rainbow{
-  0%{color: orange;}	
-  10%{color: purple;}	
-  20%{color: red;}
-  30%{color: CadetBlue;}
-  40%{color: yellow;}
-  50%{color: coral;}
-  60%{color: green;}
-  70%{color: cyan;}
-  80%{color: DeepPink;}
-  90%{color: DodgerBlue;}
-  100%{color: orange;}
+@keyframes rainbow {
+  10% { color: purple; }
+  20% { color: red; }
+  30% { color: CadetBlue; }
+  40% { color: yellow; }
+  50% { color: coral; }
+  60% { color: green; }
+  70% { color: cyan; }
+  80% { color: DodgerBlue; }
+  90% { color: orange; }
 }
 
 /* debug */
