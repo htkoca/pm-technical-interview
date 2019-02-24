@@ -19,9 +19,9 @@ function craigslistSearchBasic() {
   function parseRow($row, imgCfg) {
     return {
       'image': getImgUrl($row.querySelector('.result-image').getAttribute('data-ids'), imgCfg),
-      'title': $row.querySelector('.result-title') ? $row.querySelector('.result-title').innerHTML : "",
-      'date': $row.querySelector('.result-date') ? $row.querySelector('.result-date').getAttribute('datetime') : "",
-      'location': $row.querySelector('.result-hood') ? $row.querySelector('.result-hood').innerHTML : "",
+      'title': $row.querySelector('.result-title') ? $row.querySelector('.result-title').innerHTML.trim() : "",
+      'date': $row.querySelector('.result-date') ? $row.querySelector('.result-date').getAttribute('datetime').trim() : "",
+      'location': $row.querySelector('.result-hood') ? $row.querySelector('.result-hood').innerHTML.trim() : "",
     }
   }
 
