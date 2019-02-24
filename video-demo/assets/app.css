@@ -1,0 +1,89 @@
+/* set global styles */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+body { 
+  position: relative;
+  background: #000;
+  color: #fff;
+  font-family: 'helvetica', sans-serif;
+}
+
+/* video backdrop styles */
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+.video-container video {
+  position: absolute; /* center video */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  min-width: 100%; /* video minimum size */
+  min-height: 100%; 
+  width: auto; /* maintain aspect ratio */
+  height: auto;
+}
+
+/* video overlay */
+.video-overlay {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* text element */
+/* on narrower screens, reduce font size to fit the word 'interview' */
+/* on wider screens, increase font size to fill vertical space */
+.trigger {
+  color: white;
+  font-size: 16vmin;
+  text-decoration: none;
+  transition: font-size 0.05s linear; /* smooth font sizing on resize */
+}
+@media only screen and (max-width: 700px) {
+  .trigger {
+    font-size: 14vmin;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .trigger {
+    font-size: 18vmin;
+  }
+}
+
+/* text element animation */
+.rainbow {
+  animation: rainbow 10s infinite; 
+}
+@keyframes rainbow{
+  0%{color: orange;}	
+  10%{color: purple;}	
+  20%{color: red;}
+  30%{color: CadetBlue;}
+  40%{color: yellow;}
+  50%{color: coral;}
+  60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+  100%{color: orange;}
+}
+
+/* debug */
+.debug {
+  outline: 1px solid red;
+  outline-offset: -10px;  
+}
