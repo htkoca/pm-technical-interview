@@ -8,9 +8,9 @@ A full screen video page with rainbow text effect on click
 - [Visit Video Demo](https://htkoca.github.io/pm-technical-interview/video-demo/)
 
 ## Task 2 - API Demo
-A injectable JS function that returns craiglist toronto gig's search results in JSON format.
-- I've created an async function that fetches result pages based on 'searchQuery' arguments - [api-functions.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/assets/api-function.js) - 
-  - technical note: It returns a `promise` object that resolves into the expected 'api style' JSON output.
+A injectable JS function that returns Craigslist Toronto's `ggg` search results in JSON format.
+- I've created an async function that fetches result pages based on 'searchQuery' arguments - [see api-functions.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/assets/api-function.js)
+  - Technical Note: It returns a `promise` object that resolves into the expected 'api style' JSON output.
 
 Instructions to test function: 
 - Navigate to https://toronto.craigslist.org/search/ggg?&is_paid=all
