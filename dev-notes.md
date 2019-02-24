@@ -13,3 +13,4 @@ Since the scope of work is injectable and also very small, I've elected to omit 
 - Built basic DOM parser to parse current page results.
 - Built page fetch code, initially playing with iframes to load in pages, but settled on DOMParser as it was much cleaner.
 - Refactored all dev code into discrete sub functions, for separation of concerns and easy maintenance.
+- Ensured JSON results excluded empty property values, as per pdf example.
