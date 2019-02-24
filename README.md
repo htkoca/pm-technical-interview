@@ -10,12 +10,12 @@ A full screen video page, overlay text with 20% margins. Rainbow text effect on 
 ## Task 2 - API Demo
 A injectable JS function that returns Craigslist Toronto's `ggg` search results in JSON format.
 - [Visit api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js)
-  - I've created an async function that fetches result pages based on 'searchQuery' arguments.
-  - Technical Note: It returns a `promise` object that resolves into the expected 'api style' JSON output.
+- I've created an async function that fetches result pages based on 'searchQuery' arguments.
+- Technical Note: It returns a `promise` object that resolves into the expected 'api style' JSON output.
 
 Instructions to test function: 
 - Navigate to https://toronto.craigslist.org/search/ggg?&is_paid=all
 - Open Dev Tools (Right click > inspect)
 - Open Console tab
-- Paste in contents of [api-functions.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js)
+- Paste in contents of [api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/api-function.js)
 - Press enter
