@@ -1,3 +1,7 @@
+// you'll notice I'm not using fetch/get here - which I can easily do.
+// I don't want to re-process and re-render the target DOM manually to extract the results and grab JS image host variables.
+// The downside is no 'failure' mode - 404's are not caught in this method
+
 function craigslistSearch(searchQuery, onResult) {
 
   // sub func - get clean url based on search Query
@@ -51,7 +55,7 @@ function craigslistSearch(searchQuery, onResult) {
     var rslt = $rows.map(function ($row) { // loop through all results
       return parseRow($row, iframeScope.imageConfig); // convert result array elements into objects.
     });
-    if(onResult){
+    if(onResult){ // if callback supplied
       onResult(rslt) // log results to callback
     } else {
       console.log(rslt); // log results to console

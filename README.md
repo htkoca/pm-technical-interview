@@ -10,7 +10,7 @@ Complete tasks as per [Instructions PDF](https://github.com/htkoca/pm-technical-
 ### Task 2 - API Demo
 - A injectable JS function that returns craiglist toronto gig's search results in JSON format.
 - I've created two versions of this function.
-  - An asyncronous version that grabs data in the background - [api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/assets/api-function.js)
+  - An asyncronous version that grabs new results data in the background - [api-function.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/assets/api-function.js)
   - A basic version that just converts the current result page to JSON - [api-function-basic.js](https://github.com/htkoca/pm-technical-interview/blob/master/api-demo/assets/api-function-basic.js)
 
 ##### Task 2 Instructions
