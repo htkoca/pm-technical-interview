@@ -1,7 +1,7 @@
 # Plastic Mobile Technical Test
 
 Complete tasks as per [Instructions PDF](https://github.com/htkoca/pm-technical-interview/blob/master/UI%20Dev%20test.pdf):
-- I've added a log of my dev process [here](https://github.com/htkoca/pm-technical-interview/blob/master/dev-process.md).
+- I've added a log of my dev notes [here](https://github.com/htkoca/pm-technical-interview/blob/master/dev-notes.md).
 
 ## Task 1 - Video Demo
 A full screen video page, overlay text with 20% margins. Rainbow text effect on click.
