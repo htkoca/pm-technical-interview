@@ -24,12 +24,19 @@ function craigslistSearch(searchQuery) {
 
   // sub func - parse results row elements into obj
   function parseRow($row, imgCfg) {
-    return {
+    let rslt = {
       'image': getImgUrl($row.querySelector('.result-image').getAttribute('data-ids'), imgCfg),
       'title': $row.querySelector('.result-title') ? $row.querySelector('.result-title').innerHTML.trim() : '',
       'date': $row.querySelector('.result-date') ? $row.querySelector('.result-date').getAttribute('datetime').trim() : '',
       'location': $row.querySelector('.result-hood') ? $row.querySelector('.result-hood').innerHTML.trim() : '',
     }
+    Object.keys(rslt).forEach(function(key){
+      let val = rslt[key];
+      if( !val ){
+        delete rslt[key]
+      }
+    })
+    return rslt;
   }
 
   // main logic - fetch page, use DOMparser to parse fetch results, return promise
