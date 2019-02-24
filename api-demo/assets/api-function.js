@@ -1,27 +1,9 @@
-// you'll notice I'm not using fetch/get here - which I can easily do.
-// I don't want to re-process and re-render the target DOM manually to extract the results and grab JS image host variables.
-// The downside is no 'failure' mode - 404's are not caught in this method
-
-function craigslistSearch(searchQuery, onResult) {
+function craigslistSearch(searchQuery) {
 
   // sub func - get clean url based on search Query
   function getCleanUrl(searchQuery) {
     let query = encodeURIComponent(searchQuery).replace(/%20/g, '+');
     return 'https://toronto.craigslist.org/search/ggg?query=' + query + '&is_paid=all';
-  }
-
-  // sub func - fetch results page DOM and variables via iframe
-  function fetchPage(url, onLoad) {
-    console.log('getting results... stand by.')
-    let $iframe = document.createElement('iframe'); // create element
-    $iframe.src = url; // set up iframe url
-    $iframe.onload = function (e) {  // set up iframe onload - some browsers fire this multiple times.
-      if (e.target.src) { // ensure it's the correct one
-        onLoad($iframe, $iframe.contentWindow, $iframe.contentWindow.document.body); // callback
-      }
-    };
-    document.body.appendChild($iframe) // initialize iframe
-    return $iframe;
   }
 
   // sub func - get correct image url
@@ -35,7 +17,7 @@ function craigslistSearch(searchQuery, onResult) {
   }
 
   // sub func - htmlCollection to array
-  function htmlCollectionToArray(collection) {
+  function collectionToArray(collection) {
     return [].slice.call(collection)
   }
 
@@ -49,29 +31,34 @@ function craigslistSearch(searchQuery, onResult) {
     }
   }
 
-  // main logic - fetch page using iframe
-  fetchPage(getCleanUrl(searchQuery), function ($iframe, iframeScope, iframeBody) {
-    let $rows = htmlCollectionToArray(iframeBody.getElementsByClassName('result-row')); // create array object of all rows
-    var rslt = $rows.map(function ($row) { // loop through all results
-      return parseRow($row, iframeScope.imageConfig); // convert result array elements into objects.
+  // main logic - fetch page, use DOMparser to parse fetch results, return promise
+  console.log('getting results... stand by.')
+  return fetch(getCleanUrl(searchQuery))
+    .then(response => {
+      if (response.status === 200) {
+        return response.text()
+      } else {
+        throw new Error(response.statusText);
+      }
+    })
+    .then(text => {
+      const parser = new DOMParser();
+      const tempDOM = parser.parseFromString(text, "text/html").documentElement;
+      const $rows = tempDOM.getElementsByClassName('result-row');
+      const rslt = collectionToArray($rows).map(function ($row) { // loop through all results
+        return parseRow($row, window.imageConfig); // convert result array elements into objects.
+      });
+      console.log(rslt);
+      return rslt;
+    }).catch(function (error) {
+      console.error("[error]", error);
     });
-    if(onResult){ // if callback supplied
-      onResult(rslt) // log results to callback
-    } else {
-      console.log(rslt); // log results to console
-    }
-    $iframe.parentElement.removeChild($iframe); // remove iframe element
-  })
-
-  // return something in case
-  return "data to be returned via console"
 
 }
 
 craigslistSearch('designer');
 craigslistSearch('student');
-craigslistSearch('music');
-craigslistSearch('music', function(rslt){
-  console.log(rslt);
+craigslistSearch('music').then(results => {
+// do something with results
 });
 craigslistSearch('');

@@ -11,7 +11,7 @@ function craigslistSearchBasic() {
   }
 
   // sub func - htmlCollection to array
-  function htmlCollectionToArray(collection) {
+  function collectionToArray(collection) {
     return [].slice.call(collection)
   }
 
@@ -26,7 +26,7 @@ function craigslistSearchBasic() {
   }
 
   // main logic - fetch page using iframe
-  let $rows = htmlCollectionToArray(document.body.getElementsByClassName('result-row')); // create array object of all rows
+  let $rows = collectionToArray(document.body.getElementsByClassName('result-row')); // create array object of all rows
   return $rows.map(function ($row) { // loop through all results
     return parseRow($row, window.imageConfig); // convert result array elements into objects.
   });
