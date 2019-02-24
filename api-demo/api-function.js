@@ -10,7 +10,7 @@ function craigslistSearch(searchQuery) {
   function getImgUrl(imgIDs, imgCfg) {
     if (imgIDs) {
       let imgMap = imgIDs.split(":")
-      return imgCfg[imgMap[0]].hostname + imgMap[1] + imgCfg[imgMap[0]].sizes[0];
+      return imgCfg[imgMap[0]].hostname + "/" + imgMap[1] + "_" + imgCfg[imgMap[0]].sizes[0] +".jpg";
     } else {
       return "";
     }
@@ -25,9 +25,9 @@ function craigslistSearch(searchQuery) {
   function parseRow($row, imgCfg) {
     return {
       'image': getImgUrl($row.querySelector('.result-image').getAttribute('data-ids'), imgCfg),
-      'title': $row.querySelector('.result-title') ? $row.querySelector('.result-title').innerHTML : "",
-      'date': $row.querySelector('.result-date') ? $row.querySelector('.result-date').getAttribute('datetime') : "",
-      'location': $row.querySelector('.result-hood') ? $row.querySelector('.result-hood').innerHTML : "",
+      'title': $row.querySelector('.result-title') ? $row.querySelector('.result-title').innerHTML.trim() : "",
+      'date': $row.querySelector('.result-date') ? $row.querySelector('.result-date').getAttribute('datetime').trim() : "",
+      'location': $row.querySelector('.result-hood') ? $row.querySelector('.result-hood').innerHTML.trim() : "",
     }
   }
 
