@@ -1,4 +1,4 @@
-# Development Process
+# Dev Notes
 Since the scope of work is injectable and also very small, I've elected to omit external JS libraries like jquery, vue; all code is native js.
 
 ### Video Demo
