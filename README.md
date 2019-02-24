@@ -1,6 +1,8 @@
 # Plastic Mobile Technical Test
 
 Complete tasks as per [Instructions PDF](https://github.com/htkoca/pm-technical-interview/blob/master/UI%20Dev%20test.pdf):
+- Since the scope of work is injectable and also very small, I've elected to omit external libraries like jquery, vue.
+  - All native js code.
 
 ### Task 1 - Video Demo
 - A full screen video page with rainbow text effect on click
